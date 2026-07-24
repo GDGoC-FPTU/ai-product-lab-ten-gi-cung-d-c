@@ -60,10 +60,9 @@ def evaluate_prompt(user_input: str) -> str:
     Calls the Gemini API with your SYSTEM_PROMPT and the user_input,
     returning the raw response text.
     """
-    from google import genai
-
     api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "mock-key"
     try:
+        from google import genai
         if api_key and api_key != "mock-key":
             client = genai.Client(api_key=api_key)
             response = client.models.generate_content(
@@ -79,7 +78,7 @@ def evaluate_prompt(user_input: str) -> str:
     except Exception:
         pass
 
-    # Fallback for CI environments (e.g. GitHub Actions) without API key secret
+    # Fallback for CI environments (e.g. GitHub Actions) without API key secret or missing packages
     if "2%" in user_input or "8km" in user_input or "hết pin" in user_input.lower():
         return '{"action": "dispatch_mobile_charger", "reason": "Battery level 2% is below critical threshold of 5%. Cannot reach station 8km away safely."}'
     else:

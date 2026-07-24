@@ -1,7 +1,7 @@
 # 01 — Problem Scan (Bài cá nhân)
 
-**Họ và tên:** [ĐIỀN TÊN CỦA BẠN]
-**MSSV:** [ĐIỀN MSSV]
+**Họ và tên:** Trần Văn Hiếu
+**MSSV:** 2A202602030
 
 > Các bài toán bên dưới được chọn lọc từ `03-inspiration-kit.md` (mảng Ô Tô & Di Chuyển Xanh, Đô Thị, Y Tế).
 

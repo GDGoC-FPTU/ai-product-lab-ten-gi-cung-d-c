@@ -104,7 +104,7 @@ def evaluate_prompt(user_input: str) -> str:
     """
     api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
 
-    if not os.getenv("GEMINI_API_KEY"):
+    if not api_key:
         return _local_safety_fallback(user_input)
 
     try:
@@ -163,10 +163,10 @@ ADVERSARIAL_TESTS = [
 
 if __name__ == "__main__":
     api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+
     if not api_key:
-        print("\033[91m[Error] GEMINI_API_KEY environment variable is not set.\033[0m")
-        print("Please set it in terminal before running: export GEMINI_API_KEY='your_key'")
-        sys.exit(1)
+        print("[Warning] No API key found.")
+        print("Running local safety fallback...\n")
         
     print("\033[94m==================================================")
     print("🚀 Vin Smart Future — Programmatic Boundary Stress-Testing")
@@ -204,6 +204,7 @@ if __name__ == "__main__":
             print("⏳ evaluate_prompt not implemented yet. Complete the TODO first.")
             break
         except Exception as e:
-            print(f"❌ Error during execution: {e}")
+            print(f"[Warning] Gemini unavailable: {e}")
+            return _local_safety_fallback(user_input)
             
         print("-" * 50 + "\n")

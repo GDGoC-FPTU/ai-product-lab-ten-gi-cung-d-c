@@ -205,6 +205,6 @@ if __name__ == "__main__":
             break
         except Exception as e:
             print(f"[Warning] Gemini unavailable: {e}")
-            return _local_safety_fallback(user_input)
+            continue
             
         print("-" * 50 + "\n")

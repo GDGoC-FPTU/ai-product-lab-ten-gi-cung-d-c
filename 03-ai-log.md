@@ -1,7 +1,7 @@
 # 03 — AI Log & Reflection (Bài cá nhân)
 
-**Họ và tên:** [ĐIỀN TÊN CỦA BẠN]
-**MSSV:** [ĐIỀN MSSV]
+**Họ và tên:** Trần Văn Hiếu
+**MSSV:** 02030
 
 ---
 
